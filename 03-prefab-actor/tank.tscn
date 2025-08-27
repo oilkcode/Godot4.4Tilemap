@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq8p3i2uump3f"]
+
+[ext_resource type="Texture2D" uid="uid://bcdjmjey8qp8m" path="res://08-asset-texture/02-actor/tank.png" id="1_r7gxp"]
+[ext_resource type="Script" uid="uid://bdv0usitevb2" path="res://01-code/02-actor/TmCompInput.cs" id="2_r7v0j"]
+[ext_resource type="Script" uid="uid://cylkfdi6kvgtn" path="res://01-code/02-actor/TmCompMove.cs" id="3_ac7oc"]
+[ext_resource type="Script" uid="uid://h41415epqwia" path="res://01-code/02-actor/TmCompModel.cs" id="4_lkv7m"]
+
+[node name="Tank" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_r7gxp")
+
+[node name="CompInput" type="Node" parent="." node_paths=PackedStringArray("MyCompMove")]
+script = ExtResource("2_r7v0j")
+MyCompMove = NodePath("../CompMove")
+
+[node name="CompMove" type="Node" parent="." node_paths=PackedStringArray("MyCompModel")]
+script = ExtResource("3_ac7oc")
+MyCompModel = NodePath("../CompModel")
+
+[node name="CompModel" type="Node" parent="." node_paths=PackedStringArray("MySprite")]
+script = ExtResource("4_lkv7m")
+MySprite = NodePath("../Sprite2D")
