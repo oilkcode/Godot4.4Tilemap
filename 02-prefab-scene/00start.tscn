@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1vaimpmq08t4"]
+
+[ext_resource type="PackedScene" uid="uid://hw4v45e3ijxi" path="res://02-prefab-scene/city_tilemap.tscn" id="1_a7325"]
+[ext_resource type="PackedScene" uid="uid://bq8p3i2uump3f" path="res://03-prefab-actor/tank.tscn" id="2_dol2n"]
+
+[node name="00Start" type="Node2D"]
+
+[node name="City_Tilemap" parent="." instance=ExtResource("1_a7325")]
+
+[node name="Tank" parent="." instance=ExtResource("2_dol2n")]
+position = Vector2(524, 363)
